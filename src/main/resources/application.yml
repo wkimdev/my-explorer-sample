@@ -1,0 +1,45 @@
+#spring profiles : LOCAL
+server:
+  port: 8081  
+  address: 192.168.0.142
+  
+#spring and hikari setup
+spring:
+  profiles: local
+    
+#logging
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        web: DEBUG
+    com:
+      zaxxer:
+        hikari: DEBUG
+
+# for couchbase console
+#couchbase setup
+couchbase: 
+  bucket:
+    blocks:
+      name: Blocks
+    txs:
+      name: Transactions
+    streams:
+      name: Streams
+    name: Explorer
+    expiry: 0
+    user: jsg0212
+    password: dc393939
+    ip: 192.168.0.145
+
+#channel 
+websocket:
+  broadcast:
+    channel: "/subscribe/broadcast"
+  channel: "/websocket"
+  subscribe:
+    channel: "/subscribe"
+    
+    
